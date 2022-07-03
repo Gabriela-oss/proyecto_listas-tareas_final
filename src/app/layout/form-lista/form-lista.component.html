@@ -1,0 +1,11 @@
+<div id="form1">
+    <label for="text">Titulo de la lista</label><br>
+    <input type="text" [(ngModel)]="lista.titulo"><br>
+    <button type="button" class="btn btn-danger" (click)="agregar()">Crear</button>
+</div>
+
+<div *ngFor="let l of listas">
+  <div>
+    <h5>{{l.titulo}}</h5>
+  </div>
+</div>
