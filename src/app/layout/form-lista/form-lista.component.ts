@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Lista } from 'src/app/classes/lista';
 import { ListaService } from 'src/app/services/lista.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-lista',
@@ -13,7 +14,7 @@ export class FormListaComponent implements OnInit {
   listas:Lista[];
   lista:Lista = new Lista("");
 
-  constructor(private ls:ListaService) { 
+  constructor(private ls:ListaService, private router: Router) { 
     this.listas = ls.get();
   }
   agregar(){
@@ -21,6 +22,10 @@ export class FormListaComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  onSelect(){
+    this.router.navigate(['/formTarea']);
   }
 
 }
