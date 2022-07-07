@@ -1,5 +1,4 @@
-#form1{
-    text-align: center;
-    padding: 5%;
-    border-style: initial;
+.form-lista{
+    justify-content: center;
+    margin: auto;
 }

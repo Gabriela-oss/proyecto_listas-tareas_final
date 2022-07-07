@@ -1,11 +1,19 @@
-<div id="form1">
-    <label for="text">Titulo de la lista</label><br>
-    <input type="text" [(ngModel)]="lista.titulo"><br>
-    <button type="button" class="btn btn-danger" (click)="agregar()">Crear</button>
+<div class="row g-3 form-lista">
+  <div class="col-auto">
+    <label for="inputPassword6" class="col-form-label">Titulo de la lista</label>
+  </div>
+  <div class="col-auto">
+    <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" [(ngModel)]="lista.titulo">
+  </div>
+  <div class="col-auto">
+    <span >
+      <button type="button" class="btn btn-danger form-text" id="passwordHelpInline" (click)="agregar()">Crear</button>
+    </span>
+  </div>
 </div>
 
 <div *ngFor="let l of listas">
   <div>
     <h5>{{l.titulo}}</h5>
   </div>
-</div>
+</div> 
