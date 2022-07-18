@@ -1,95 +1,68 @@
-<div class="container">
+<div class="container border border-info border-5 rounded-2">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col">
+    </div> 
+
+    <div class="col-8">
       <div class="well well-sm">
-        <form class="form-horizontal" method="post">
-          <fieldset>
-            <legend class="text-center header">Contact us</legend>
+        <form method="post">
+          <div class="col-sm-6">
+            <h3 class="text-center header">Crear Nueva Tarea +</h3>
+              <h5 class="mb-1">Nombre de tarea</h5>
+              <input type="text" class="form-control" id="firstName" required>
+            </div> 
 
-            <div class="form-group">
-              <span class="col-md-1 col-md-offset-2 text-center"
-                ><i class="fa fa-user bigicon"></i
-              ></span>
-              <div class="col-md-8">
-                <input
-                  id="fname"
-                  name="name"
-                  type="text"
-                  placeholder="First Name"
-                  class="form-control"
-                />
+            <div class="my-3">
+                <h5 class="mb-1">Urgencia</h5>
+                <div class="form-check">
+                  <input id="credit" name="Urgencia" type="radio" class="form-check-input" checked required>
+                  <label class="form-check-label" for="credit">Normal</label>
+                </div>
+                <div class="form-check">
+                  <input id="debit" name="Urgencia" type="radio" class="form-check-input" required>
+                  <label class="form-check-label" for="debit">Urgente</label>
+                </div>
               </div>
-            </div>
-            <div class="form-group">
-              <span class="col-md-1 col-md-offset-2 text-center"
-                ><i class="fa fa-user bigicon"></i
-              ></span>
-              <div class="col-md-8">
-                <input
-                  id="lname"
-                  name="name"
-                  type="text"
-                  placeholder="Last Name"
-                  class="form-control"
-                />
-              </div>
-            </div>
 
-            <div class="form-group">
-              <span class="col-md-1 col-md-offset-2 text-center"
-                ><i class="fa fa-envelope-o bigicon"></i
-              ></span>
-              <div class="col-md-8">
-                <input
-                  id="email"
-                  name="email"
-                  type="text"
-                  placeholder="Email Address"
-                  class="form-control"
-                />
+              <div class="my-3">
+                <h5 class="mb-1">Estado</h5>
+                <div class="form-check">
+                  <input id="credit" name="Estado" type="radio" class="form-check-input" checked required>
+                  <label class="form-check-label" for="credit">Pendiente </label>
+                </div>
+                <div class="form-check">
+                  <input id="debit" name="Estado" type="radio" class="form-check-input" required>
+                  <label class="form-check-label" for="debit">En Proceso</label>
+                </div>
+                <div class="form-check">
+                  <input id="paypal" name="Estado" type="radio" class="form-check-input" required>
+                  <label class="form-check-label" for="paypal">Terminada</label>
+                </div>
               </div>
-            </div>
+            
+              <div class="col-sm-6">
+                <h5 class="mb-1">Fecha de Vencimiento </h5>
+                <input type="date" class="form-control" id="Nombre" placeholder="Añada Fecha" value="" required>
+              </div><br>
 
-            <div class="form-group">
-              <span class="col-md-1 col-md-offset-2 text-center"
-                ><i class="fa fa-phone-square bigicon"></i
-              ></span>
-              <div class="col-md-8">
-                <input
-                  id="phone"
-                  name="phone"
-                  type="text"
-                  placeholder="Phone"
-                  class="form-control"
-                />
-              </div>
-            </div>
+              <div class="col-sm-6">
+                <h5 class="mb-1">Responsable </h5>
+                <input type="text" class="form-control" placeholder="Añada Nombre de Persona Responsable" required>
+                <input type="text" class="form-control" placeholder="Añada Rol de Persona Responsable" required>
+              </div><br>
 
-            <div class="form-group">
-              <span class="col-md-1 col-md-offset-2 text-center"
-                ><i class="fa fa-pencil-square-o bigicon"></i
-              ></span>
-              <div class="col-md-8">
-                <textarea
-                  class="form-control"
-                  id="message"
-                  name="message"
-                  placeholder="Enter your massage for us here. We will get back to you within 2 business days."
-                  rows="7"
-                ></textarea>
+              <h5 class="mb-1"> Datos de Contacto</h5>
+              <div class="col-sm-6 text-center">
+                <input type="text" class="form-control" id="Nombre" placeholder="Tipo de Contacto" value="" required>
+                <input type="text" class="form-control" id="Rol" placeholder="Correo Electronico" value="" required>
+                <input type="text" class="form-control" id="Rol" placeholder="Teléfono" value="" required>
+                <input type="text" class="form-control" id="Rol" placeholder="Dirección" value="" required>
+                <br><button type="submit" class="btn btn-lg">Crear</button>
+                <button class="btn btn-lg" routerLink="/formLista">Cancelar</button>
               </div>
-            </div>
-
-            <div class="form-group">
-              <div class="col-md-12 text-center">
-                <button type="submit" class="btn btn-primary btn-lg">
-                  Submit
-                </button>
-              </div>
-            </div>
-          </fieldset>
+              <!-- <div class="col">
+              </div> -->
         </form>
       </div>
     </div>
   </div>
-</div>

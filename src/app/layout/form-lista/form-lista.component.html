@@ -1,25 +1,19 @@
-<div class="row g-3 form-lista">
+<div class="row g-3 form-lista mx-auto">
   <div class="col-auto">
-    <label for="inputPassword6" class="col-form-label">Titulo de la lista</label>
+    <h3 for="inputPassword6" class="col-form-label">Titulo de la lista</h3>
   </div>
   <div class="col-auto">
-    <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" [(ngModel)]="lista.titulo">
+    <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" #tituloLista>
   </div>
   <div class="col-auto">
     <span id="passwordHelpInline" class="form-text">
-      <button type="button" class="btn btn-danger" (click)="agregar()">Crear</button>
+      <button type="button" class="btn btn-danger" (click)="addList(tituloLista.value)">Crear</button>
     </span>
   </div>
 </div>
 
-
-<div class="row">
-  <div class="col-sm-4"  *ngFor="let l of listas">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">{{l.titulo}}</h5>
-        <a (click)="onSelect()" class="btn btn-primary">Nueva Tarea</a>
-      </div>
-    </div>
-  </div>
-</div>
+<p *ngIf="alert">
+  <ngb-alert [dismissible]="false">
+    <strong>Aviso! </strong> Debe de ponerle un titulo a la lista.
+  </ngb-alert>
+</p>

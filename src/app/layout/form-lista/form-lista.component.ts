@@ -1,31 +1,40 @@
 import { Component, OnInit } from '@angular/core';
 import { Lista } from 'src/app/classes/lista';
 import { ListaService } from 'src/app/services/lista.service';
-import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-form-lista',
   templateUrl: './form-lista.component.html',
   styleUrls: ['./form-lista.component.css']
 })
-
 export class FormListaComponent implements OnInit {
 
   listas:Lista[];
-  lista:Lista = new Lista("");
+  lista:Lista= new Lista("")
+  alert:boolean = false;
 
-  constructor(private ls:ListaService, private router: Router) { 
+  constructor(private ls:ListaService, private http:HttpClient) { 
     this.listas = ls.get();
   }
-  agregar(){
-    this.ls.add(new Lista(this.lista.titulo));
+    
+  addList(titulo:string):void{  
+    if(titulo == ""){
+      this.alert = true
+    }else{
+      this.alert = false;
+
+      let lista = {nombre:titulo}
+      console.log(lista)
+      this.http.post("http://backendtutoriadw.herokuapp.com/add/list/3GVx6bUV5RuHfmHUZG74nbk7cjUV33",lista).subscribe((data)=>{
+        // return data
+        console.log(data)
+      })
+      this.listas.push(lista)
   }
+}
 
   ngOnInit(): void {
-  }
-
-  onSelect(){
-    this.router.navigate(['/formTarea']);
   }
 
 }
