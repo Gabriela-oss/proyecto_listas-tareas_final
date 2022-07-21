@@ -9,10 +9,12 @@
                 <div class="card-body">
                   <h5 class="card-title">{{l.nombre}}</h5>
                   <a (click)="onSelect()" class="btn btn-primary">Nueva Tarea +</a>
-                  <a class="btn btn-danger">Eliminar</a>
+                  <!-- <a class="btn btn-danger" (click)="delete(l.nombre)">Eliminar</a>  -->
                 </div>
-              </div>
+              </div><br>
             </div>
           </div>
         </div>
       </div>  
+
+      <p *ngFor="let tarea of tareas">{{tarea.nombre}}</p>

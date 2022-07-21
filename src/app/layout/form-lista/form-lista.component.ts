@@ -10,31 +10,26 @@ import { HttpClient } from '@angular/common/http';
 })
 export class FormListaComponent implements OnInit {
 
-  listas:Lista[];
-  lista:Lista= new Lista("")
+  // listas:Lista[];
+  lista:Lista= new Lista("", 0);
   alert:boolean = false;
 
-  constructor(private ls:ListaService, private http:HttpClient) { 
-    this.listas = ls.get();
+  constructor(private ls:ListaService, private http:HttpClient){ 
+    // this.listas = ls.getLists();
   }
     
-  addList(titulo:string):void{  
+  add(titulo:string){  
     if(titulo == ""){
       this.alert = true
     }else{
       this.alert = false;
-
-      let lista = {nombre:titulo}
-      console.log(lista)
-      this.http.post("http://backendtutoriadw.herokuapp.com/add/list/3GVx6bUV5RuHfmHUZG74nbk7cjUV33",lista).subscribe((data)=>{
-        // return data
-        console.log(data)
-      })
-      this.listas.push(lista)
+      this.ls.addList(titulo)
+      // this.listas.push(lista)
   }
 }
 
   ngOnInit(): void {
   }
+
 
 }

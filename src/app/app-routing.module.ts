@@ -7,7 +7,9 @@ import { InicioComponent } from './layout/home/inicio.component'
 const routes: Routes = [
   {path:"formLista", component:FormListaComponent},
   {path:"Inicio", component:InicioComponent},
-  {path:"formTarea", component: FormTareaComponent}
+  {path:"formTarea", component: FormTareaComponent},
+  {path:"formTarea/:id", component: FormTareaComponent},
+  {path:"formLista/:id", component: FormListaComponent}
 ];
 
 @NgModule({
