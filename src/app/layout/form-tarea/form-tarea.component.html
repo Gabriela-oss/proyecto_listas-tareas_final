@@ -31,73 +31,71 @@
             #descripcion
           />
 
+          <div
+          *ngIf="
+            formTasks.get('descripcion')?.hasError('required') &&
+            formTasks.get('descripcion')?.touched
+          "
+          class="alert alertColor"
+        >
+
         <div class="my-3">
           <h5 class="mb-1">Urgencia</h5>
           <div class="form-check">
             <input
-              id="credit"
-              name="Urgencia"
               type="radio"
               class="form-check-input"
-              checked
               formControlName="urgencia"
+              value="normal"
               #urgencia
             />
             <label class="form-check-label" for="credit">Normal</label>
           </div>
           <div class="form-check">
             <input
-              id="debit"
-              name="Urgencia"
               type="radio"
               class="form-check-input"
               formControlName="urgencia"
+              value="urgente"
               #urgencia
             />
             <label class="form-check-label" for="debit">Urgente</label>
           </div>
         </div>
 
+        <div>{{urgencia.value}}</div>
+
         <div class="my-3">
           <h5 class="mb-1">Estado</h5>
           <div class="form-check">
             <input
-              id="credit"
-              name="Estado"
               type="radio"
               class="form-check-input"
-              checked
-              formControlName="estado"
+              formControlName="estados"
               #estado
             />
             <label class="form-check-label" for="credit">Pendiente </label>
           </div>
           <div class="form-check">
             <input
-              id="debit"
-              name="Estado"
               type="radio"
               class="form-check-input"
-              checked
-              formControlName="estado"
+              formControlName="estados"
               #estado
             />
             <label class="form-check-label" for="debit">En Proceso</label>
           </div>
           <div class="form-check">
             <input
-              id="paypal"
-              name="Estado"
               type="radio"
               class="form-check-input"
-              checked
-              formControlName="estado"
+              formControlName="estados"
               #estado
             />
             <label class="form-check-label" for="paypal">Terminada</label>
           </div>
         </div>
-
+        <div>{{estado.value}}</div>
           <h5 class="mb-1">Fecha de Vencimiento</h5>
           <input
             type="date"
@@ -188,20 +186,21 @@
 
           <div>
             <h5 class="mb-1">Seleccione la lista para agregar la tarea</h5>
-<!-- 
+
             <select class="form-select">
-              <option *ngFor="let list of lists">{{list.nombre}}</option>
-            </select> -->
+              <option *ngFor="let l of lists">{{l.nombre}}</option>
+            </select>
             
           </div>
           
-          <br /><button type="submit" class="btn btn-lg">Crear</button>
+          <br/><button type="submit" class="btn btn-lg">Crear</button>
           <button class="btn btn-lg" routerLink="/formLista">Cancelar</button>
         </div>
-      </form>
-    </div>
+    </form>
   </div>
+</div>
   
+
 
   <!-- <div *ngIf="formTasks.get('urgencia')?.hasError('required')&&formTasks.get('urgencia')?.touched" class="alert alertColor">
     <strong>
@@ -213,7 +212,3 @@
       Debe de seleccionar la estado
     </strong>
   </div> -->
-
-  </div>
-  <p>Gabs</p>
-  <p *ngFor="let l of lists">{{l.nombre}}</p>
