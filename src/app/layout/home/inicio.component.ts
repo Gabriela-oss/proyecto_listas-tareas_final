@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ListaService } from 'src/app/services/lista.service';
 import { Lista } from 'src/app/classes/lista';
-import { TareaService } from 'src/app/services/tarea.service';
-import { Tarea } from 'src/app/classes/tarea';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
@@ -11,25 +10,26 @@ import { Tarea } from 'src/app/classes/tarea';
 })
 export class InicioComponent implements OnInit {
 
-  listas:Lista[] = [];
-  tareas:Tarea[]=[];
+  listas:any[] = [];
 
-  constructor( private router:Router, private ls:ListaService, private ts:TareaService){ 
+  constructor( private router:Router, private ls:ListaService, private http:HttpClient){ 
   }
 
   showLists(){
     this.ls.getLists().subscribe((data:Lista[])=>{
       console.log(data)
       this.listas = data;
+      console.log(this.listas)
     })
   }
 
-  showTasks(){
-    this.ts.getTasks().subscribe((data:Tarea[])=>{
-      console.log(data)
-      this.tareas = data;
-    })
-  }
+  delete(lista:number):void{
+    let deleteUrl:string = "http://backendtutoriadw.herokuapp.com/delete/list/3GVx6bUV5RuHfmHUZG74nbk7cjUV33?_id=" + lista;
+    console.log(deleteUrl)
+    this.http.delete(deleteUrl).subscribe(response =>{
+        console.log(response);
+    });
+}
   
   onSelect(){
     this.router.navigate(['/formTarea']);
@@ -37,6 +37,5 @@ export class InicioComponent implements OnInit {
 
   ngOnInit(): void {
     this.showLists();
-    this.showTasks();
   }
 }

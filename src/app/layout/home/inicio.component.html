@@ -8,7 +8,17 @@
               <div class="card">
                 <div class="card-body">
                   <h5 class="card-title">{{l.nombre}}</h5>
-                  <a (click)="onSelect()" class="btn btn-primary">Nueva Tarea +</a>
+                  <div class="row">
+                    <div class="col-4">
+                      <a (click)="onSelect()" class="btn btn-primary">Nueva Tarea +</a>
+                    </div>
+                    <div class="col-4">
+                      <a routerLink="/tasks" class="btn btn-warning">Ver Tareas</a>
+                    </div>
+                    <div class="col-4">
+                      <a (click)="delete(l._id)" class="btn btn-danger">Eliminar Lista</a>
+                    </div>
+                  </div>
                   <!-- <a class="btn btn-danger" (click)="delete(l.nombre)">Eliminar</a>  -->
                 </div>
               </div><br>
@@ -17,20 +27,3 @@
         </div>
       </div>  
 
-      <p></p>
-      <div class="card" style="width: 18rem;"  *ngFor="let tarea of tareas">
-        <div class="card-body">
-          <h5 class="card-title">{{tarea.nombre}}</h5>
-          <p class="card-text">{{tarea.descripcion}}</p>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">{{tarea.estado}}</li>
-          <li class="list-group-item">{{tarea.urgenciaString}}</li>
-          <li class="list-group-item">{{tarea.fechaVencimiento}}</li>
-        </ul>
-        <div class="card-body">
-          <a href="#" class="card-link">Editar</a>
-          <a href="#" class="card-link">Eliminar</a>
-        </div>
-      </div>
-      <app-form-tarea></app-form-tarea>

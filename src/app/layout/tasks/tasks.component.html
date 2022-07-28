@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row offset-1">
+        <div class="card" style="width: 18rem; margin: 3px;"  *ngFor="let tarea of tareas">
+            <div class="card-body">
+              <h5 class="card-title">{{tarea.nombre}}</h5>
+              <p class="card-text">{{tarea.descripcion}}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">{{tarea.estado}}</li>
+              <li class="list-group-item">{{tarea.urgenciaString}}</li>
+              <li class="list-group-item">{{tarea.fechaVencimiento}}</li>
+            </ul>
+            <div class="card-body">
+              <a href="#" class="card-link">Editar</a>
+              <a (click)="deleteT(tarea._id)" class="card-link">Eliminar</a>
+            </div>
+          </div>
+    </div>
+</div>

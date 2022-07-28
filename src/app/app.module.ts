@@ -9,12 +9,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { InicioComponent } from './layout/home/inicio.component';
 import {HttpClientModule} from '@angular/common/http'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TasksComponent } from './layout/tasks/tasks.component';
+import { EditTasksComponent } from './layout/edit-tasks/edit-tasks.component';
 @NgModule({
   declarations: [
     AppComponent,
     FormListaComponent,
     FormTareaComponent,
-    InicioComponent
+    InicioComponent,
+    TasksComponent,
+    EditTasksComponent
   ],
   imports: [
     BrowserModule,

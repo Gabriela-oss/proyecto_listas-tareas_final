@@ -1,0 +1,145 @@
+<div class="container border border-info border-5 rounded-2">
+    <div class="row">
+      <div class="col-4 offset-4">
+        <h3 class="text-center header">Crear Nueva Tarea +</h3>
+        <h5 class="mb-1">Nombre de tarea</h5>
+        <input
+          type="text"
+          class="form-control"
+          id="firstName"
+        />
+  
+        <h5 class="mb-1">Descripcion de la tarea</h5>
+        <input
+          type="text"
+          class="form-control"
+          id="firstName"
+        />
+        <div class="my-3">
+          <h5 class="mb-1">Urgencia</h5>
+          <div class="form-check">
+            <input
+              id="normal"
+              name="Urgencia"
+              value="normal"
+              type="radio"
+              class="form-check-input"
+            />
+            <label class="form-check-label" for="normal">Normal</label>
+          </div>
+          <div class="form-check">
+            <input
+              id="urgente"
+              name="Urgencia"
+              value="urgente"
+              type="radio"
+              class="form-check-input"
+            />
+            <label class="form-check-label" for="urgente">Urgente</label>
+          </div>
+        </div>
+  
+        <div class="my-3">
+          <h5 class="mb-1">Estado</h5>
+          <div class="form-check">
+            <input
+              id="pendiente"
+              name="Estado"
+              type="radio"
+              class="form-check-input"
+              value="pendiente"
+            />
+            <label class="form-check-label" for="pendiente">Pendiente </label>
+          </div>
+          <div class="form-check">
+            <input
+              id="en proceso"
+              name="Estado"
+              type="radio"
+              class="form-check-input"
+              value="en proceso"
+            />
+            <label class="form-check-label" for="en proceso">En Proceso</label>
+          </div>
+          <div class="form-check">
+            <input
+              id="terminada"
+              name="Estado"
+              type="radio"
+              class="form-check-input"
+              value="terminada"
+            />
+            <label class="form-check-label" for="terminada">Terminada</label>
+          </div>
+        </div>
+  
+        <h5 class="mb-1">Fecha de Vencimiento</h5>
+        <input
+          type="date"
+          class="form-control"
+          id="Nombre"
+          placeholder="Añada Fecha"
+          value=""
+        />
+  
+        <br />
+  
+        <h5 class="mb-1">Responsable</h5>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Añada Nombre de Persona Responsable"
+        />
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Añada Rol de Persona Responsable"
+        />
+        <br />
+  
+        <h5 class="mb-1">Datos de Contacto</h5>
+        <div class="text-center">
+          <input
+            type="text"
+            class="form-control"
+            id="Nombre"
+            placeholder="Tipo de Contacto"
+          />
+          <input
+            type="text"
+            class="form-control"
+            id="Rol"
+            placeholder="Correo Electronico"
+          />
+          <input
+            type="text"
+            class="form-control"
+            id="Rol"
+            placeholder="Teléfono"
+            value=""
+          />
+          <input
+            type="text"
+            class="form-control"
+            id="Rol"
+            placeholder="Dirección"
+            value=""
+          />
+  
+          <div>
+            <h5 class="mb-1">Seleccione la lista para agregar la tarea</h5>
+<!--   
+            <select class="form-select">
+              <option *ngFor="let l of listas" value="{{ l.categoriaLista }}">
+                {{ l.nombre }}
+              </option>
+            </select> -->
+          </div>
+  
+          <br /><button type="submit" class="btn btn-lg">
+            Crear
+          </button>
+          <button class="btn btn-lg" routerLink="/Inicio">Cancelar</button>
+        </div>
+      </div>
+    </div>
