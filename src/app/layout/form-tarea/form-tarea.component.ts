@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { UntypedFormControl, UntypedFormGroup, Validators, UntypedFormBuilder } from '@angular/forms';
 import { TareaService } from 'src/app/services/tarea.service';
 import { ListaService } from 'src/app/services/lista.service';
 import { Lista } from 'src/app/classes/lista';
@@ -41,27 +40,6 @@ export class FormTareaComponent implements OnInit {
     telefono:"", 
     direccion:""
   }
-
-  /*urgencia:UntypedFormControl = new UntypedFormControl();
-  estados:UntypedFormControl = new UntypedFormControl();
-
-  formTasks:UntypedFormGroup = new UntypedFormGroup({
-    nombre:new UntypedFormControl("",[Validators.required]),
-    descripcion: new UntypedFormControl("",[Validators.required]),
-    datosContacto: new UntypedFormControl("",[Validators.required]), 
-    fechaVencimiento: new UntypedFormControl("", [Validators.required]), 
-    urgencia: this.fb.group({
-      urgencia:this.urgencia
-    }),
-    estado: this.fb.group({
-      estado:this.estados
-    })
-  })
-
-  // listas:Tarea[] 
-  tareas_lista:Tarea[]=[];
-  lista:Lista = new Lista("",0); 
-  lists:Lista[]=[];*/
 
   constructor(public ruta:ActivatedRoute, private t:TareaService, public ls:ListaService, private http:HttpClient) { 
     
@@ -125,14 +103,4 @@ export class FormTareaComponent implements OnInit {
     this.getList()
     this.getTasks()
   }
-
-  // addTask(){
-  //   console.log(this.formTasks)
-  //   if (this.formTasks.valid){
-  //     this.t.addTasks(this.lista, this.formTasks.get("nombre")?.value, this.formTasks.get("descripcion")?.value, this.formTasks.get("urgencia")?.value, this.formTasks.get("estados")?.value, this.formTasks.get("datosContacto")?.value, this.formTasks.get("fechaVencimiento")?.value) 
-  //     console.log("se guardo bien")
-  //   }else{
-  //     console.log("no se pudo agregar una tarea")
-  //   }
-  // }
 }

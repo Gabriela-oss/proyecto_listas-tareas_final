@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { EditTasksComponent } from './layout/edit-tasks/edit-tasks.component';
 import { FormListaComponent } from './layout/form-lista/form-lista.component';
 import { FormTareaComponent } from './layout/form-tarea/form-tarea.component';
 import { InicioComponent } from './layout/home/inicio.component'
@@ -10,8 +11,7 @@ const routes: Routes = [
   {path:"Inicio", component:InicioComponent},
   {path:"formTarea", component: FormTareaComponent},
   {path:"tasks", component: TasksComponent},
-  {path:"formTarea/:id", component: FormTareaComponent},
-  {path:"formLista/:id", component: FormListaComponent}
+  {path:"tasks/editTasks/:_id", component:EditTasksComponent}
 ];
 
 @NgModule({

@@ -1,0 +1,18 @@
+#color{
+    color: violet;
+}
+strong{
+    color: grey;
+}
+.modal-body{
+    background-color: blue;
+    text-align: center;
+}
+
+.centrar{
+    text-align: center;
+}
+h1{
+    text-align: center;
+    color: rgb(1, 120, 160);
+}

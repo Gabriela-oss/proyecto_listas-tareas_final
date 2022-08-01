@@ -1,25 +1,26 @@
 <div class="container lists">
+  <div class="row">
+    <div class="col-6">
+      <app-form-lista></app-form-lista>
+    </div>
+  </div>
     <div class="row">
       <div class="col">
-        <h4>Listas</h4>
-        <div class="row">
+        <div class="row" id="cancelar">
           <div class="col-sm-4"  *ngFor="let l of listas">
             <div class="col">
               <div class="card">
                 <div class="card-body">
                   <h5 class="card-title">{{l.nombre}}</h5>
                   <div class="row">
-                    <div class="col-4">
-                      <a (click)="onSelect()" class="btn btn-primary">Nueva Tarea +</a>
+                    <div class="col-6">
+                      <a routerLink="/tasks" class="btn btn-warning"><i class="fa-solid fa-file-pen"></i> Ver Tareas </a>
+                      <!-- <a [routerLink]="['tasks', l._id]" class="btn btn-warning"><i class="fa-solid fa-file-pen"></i> Ver Tareas </a> -->
                     </div>
-                    <div class="col-4">
-                      <a routerLink="/tasks" class="btn btn-warning">Ver Tareas</a>
-                    </div>
-                    <div class="col-4">
-                      <a (click)="delete(l._id)" class="btn btn-danger">Eliminar Lista</a>
+                    <div class="col-6">
+                      <a  (click)="open(content, l._id)" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
                     </div>
                   </div>
-                  <!-- <a class="btn btn-danger" (click)="delete(l.nombre)">Eliminar</a>  -->
                 </div>
               </div><br>
             </div>
@@ -27,3 +28,16 @@
         </div>
       </div>  
 
+      <ng-template #content let-modal>
+        <div class="modal-body">
+          <div class="alert alert-primary" role="alert">
+            <p>
+              ¿Esta seguro que desea eliminar esta lista?
+            </p><br>
+            <button type="button" class="btn btn-danger" (click)="delete()">Eliminar</button>
+          </div>
+        </div>
+      </ng-template>
+      
+
+      

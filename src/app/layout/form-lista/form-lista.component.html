@@ -1,19 +1,20 @@
 <div class="row g-3 form-lista mx-auto">
   <div class="col-auto">
-    <h3 for="inputPassword6" class="col-form-label">Titulo de la lista</h3>
+    <h1 for="inputPassword6" class="col-form-label">Nueva Lista <strong>+</strong></h1>
   </div>
   <div class="col-auto">
     <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" #nombreLista>
   </div>
   <div class="col-auto">
     <span id="passwordHelpInline" class="form-text">
-      <button type="button" class="btn btn-danger" (click)="add(nombreLista.value)">Crear</button>
+      <button type="button" class="btn btn-success" (click)="add(nombreLista.value)">Crear</button>
     </span>
   </div>
-</div>
+</div> 
 
 <p *ngIf="alert">
   <ngb-alert [dismissible]="false">
     <strong>Aviso! </strong> Debe de ponerle un titulo a la lista.
   </ngb-alert>
 </p>
+

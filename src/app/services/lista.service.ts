@@ -28,4 +28,16 @@ export class ListaService {
         console.log(data)
       })
   }
+
+  delete(lista:number):void{
+    let deleteUrl:string = "http://backendtutoriadw.herokuapp.com/delete/list/3GVx6bUV5RuHfmHUZG74nbk7cjUV33?_id=" + lista;
+    console.log(deleteUrl)
+    this.http.delete(deleteUrl).subscribe(response =>{
+        console.log(response);
+    });
+  }
+
+  getListById(id:number):Observable<Lista>|any{
+    return this.http.get<Lista[]>("http://backendtutoriadw.herokuapp.com/get/list/3GVx6bUV5RuHfmHUZG74nbk7cjUV33?_id="+id); //al final pone el id para que se concatene con el parametro de la ruta, el signo de pregunta es para decirle que es un parametro en php
+  }
 }

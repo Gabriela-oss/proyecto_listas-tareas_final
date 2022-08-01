@@ -1,4 +1,3 @@
-// import { Tarea } from "./tarea";
 export class Lista {
     public nombre:string;
     public categoriaLista:number

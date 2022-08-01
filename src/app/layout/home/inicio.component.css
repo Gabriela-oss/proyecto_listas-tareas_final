@@ -1,3 +1,16 @@
 .lists{
     text-align: center;
 }
+
+#search{
+    margin-bottom: 5%;
+    margin-top: 3%;
+}
+
+#search div i{
+    margin-right: 2%;
+}
+.modal-body{
+    background-color: blue;
+    text-align: center;
+}
